@@ -13,15 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup lazy_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | Lazy sync
-  augroup end
-]]
-
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
   return
@@ -37,4 +28,5 @@ lazy.setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+  "lunarvim/colorschemes",
 })
