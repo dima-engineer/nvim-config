@@ -28,5 +28,20 @@ lazy.setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+
+  -- Colorschemes
   "lunarvim/colorschemes",
+
+  -- CMP plugins
+  "hrsh7th/nvim-cmp", -- The completion plugin
+  "hrsh7th/cmp-buffer", -- buffer completion
+  "hrsh7th/cmp-path", -- path completion
+  "hrsh7th/cmp-cmdline", -- commandline completion
+  "hrsh7th/cmp-nvim-lua", -- Add completion for vim stuff
+  "saadparwaiz1/cmp_luasnip", -- snippet completions
+
+  -- snippets
+  "L3MON4D3/LuaSnip", -- snippet engine
+  "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 })
+
