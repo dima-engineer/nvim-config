@@ -38,10 +38,18 @@ lazy.setup({
   "hrsh7th/cmp-path", -- path completion
   "hrsh7th/cmp-cmdline", -- commandline completion
   "hrsh7th/cmp-nvim-lua", -- Add completion for vim stuff
+  "hrsh7th/cmp-nvim-lsp",
   "saadparwaiz1/cmp_luasnip", -- snippet completions
 
   -- snippets
   "L3MON4D3/LuaSnip", -- snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+
+  -- LSP
+  "neovim/nvim-lspconfig", -- enable LSP
+  "williamboman/mason.nvim", -- simple to use language server installer
+  "williamboman/mason-lspconfig.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
+
 })
 
