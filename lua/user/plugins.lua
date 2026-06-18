@@ -49,7 +49,7 @@ lazy.setup({
   "neovim/nvim-lspconfig", -- enable LSP
   "williamboman/mason.nvim", -- simple to use language server installer
   "williamboman/mason-lspconfig.nvim",
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 
 })
 
