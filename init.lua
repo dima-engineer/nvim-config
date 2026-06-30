@@ -399,6 +399,7 @@ vim.pack.add({
 		version = vim.version.range("1.*"),
 	},
 	"https://github.com/L3MON4D3/LuaSnip",
+  "https://github.com/akinsho/git-conflict.nvim"
 })
 
 local function packadd(name)
@@ -414,6 +415,7 @@ packadd("mason.nvim")
 packadd("efmls-configs-nvim")
 packadd("blink.cmp")
 packadd("LuaSnip")
+packadd("git-conflict.nvim")
 -- ============================================================================
 -- PLUGIN CONFIGS
 -- ============================================================================
@@ -542,6 +544,7 @@ vim.keymap.set("n", "<leader>hb", function()
 	require("mini.git").show_at_cursor()
 end, { desc = "Git blame/show" })
 
+require('git-conflict').setup()
 -- ============================================================================
 -- LSP, Linting, Formatting & Completion
 -- ============================================================================
