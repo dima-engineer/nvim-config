@@ -22,6 +22,7 @@ My personal Neovim configuration — a single-file setup using the native `vim.p
 | [efmls-configs-nvim](https://github.com/creativenull/efmls-configs-nvim) | EFM language server configs (linters/formatters) |
 | [blink.cmp](https://github.com/saghen/blink.cmp) | Completion engine |
 | [LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippet engine |
+| [git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim) | Git merge conflict resolution |
 
 ### Mini modules in use
 
@@ -124,6 +125,17 @@ Leader key: `<Space>`
 | `<leader>q` | Open diagnostics in loclist |
 | `<leader>dl` | Show line diagnostics float |
 | `<leader>td` | Toggle diagnostics on/off |
+
+### Git Conflicts (git-conflict.nvim)
+
+| Key | Action |
+|---|---|
+| `co` | Choose ours (current) |
+| `ct` | Choose theirs (incoming) |
+| `cb` | Choose both |
+| `c0` | Choose none |
+| `]x` | Next conflict |
+| `[x` | Previous conflict |
 
 ### Git (mini.diff + mini.git)
 
