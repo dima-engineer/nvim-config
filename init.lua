@@ -705,7 +705,19 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
-vim.lsp.config("basedpyright", {})
+vim.lsp.config("basedpyright", {
+  filetypes = { "python" },
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "recommended",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
+
+})
 vim.lsp.config("bashls", {})
 vim.lsp.config("ts_ls", {})
 vim.lsp.config("gopls", {})
