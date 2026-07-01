@@ -705,7 +705,7 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
-vim.lsp.config("pyright", {})
+vim.lsp.config("basedpyright", {})
 vim.lsp.config("bashls", {})
 vim.lsp.config("ts_ls", {})
 vim.lsp.config("gopls", {})
@@ -789,7 +789,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.lsp.enable({
 	"lua_ls",
-  "pyright",
+	"basedpyright",
 	"bashls",
 	"ts_ls",
 	"gopls",
