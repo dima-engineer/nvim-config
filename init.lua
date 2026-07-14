@@ -480,6 +480,9 @@ require("nvim-tree").setup({
 	renderer = {
 		group_empty = true,
 	},
+	update_focused_file = {
+		enable = true,
+	},
 })
 vim.keymap.set("n", "<leader>e", function()
 	require("nvim-tree.api").tree.toggle()
@@ -536,7 +539,10 @@ end, { desc = "Next git hunk" })
 vim.keymap.set("n", "[h", function()
 	MiniDiff.goto_hunk("prev")
 end, { desc = "Prev git hunk" })
-vim.keymap.set("n", "<leader>hs", MiniDiff.operator, { desc = "Stage hunk" })
+vim.keymap.set({ "n", "x" }, "<leader>hs", function()
+	return MiniDiff.operator("apply")
+end, { expr = true, desc = "Stage hunk" })
+vim.keymap.set("o", "<leader>hs", "<Cmd>lua MiniDiff.textobject()<CR>", { desc = "Stage hunk (current)" })
 vim.keymap.set("n", "<leader>hp", function()
 	MiniDiff.toggle_overlay()
 end, { desc = "Preview diff overlay" })
@@ -712,17 +718,20 @@ vim.lsp.config("basedpyright", {
       analysis = {
         typeCheckingMode = "recommended",
         autoSearchPaths = true,
-        useLibraryCodeForTypes = true
+        useLibraryCodeForTypes = true,
+        diagnosticSeverityOverrides = {
+          reportUnannotatedClassAttribute = "none",
+        }
       }
     }
   }
-
 })
 vim.lsp.config("bashls", {})
 vim.lsp.config("ts_ls", {})
 vim.lsp.config("gopls", {})
 vim.lsp.config("fish-lsp", {})
 vim.lsp.config("clangd", {})
+vim.lsp.config("terraformls", {})
 
 do
 	local luacheck = require("efmls-configs.linters.luacheck")
@@ -808,4 +817,5 @@ vim.lsp.enable({
 	"clangd",
 	"fish-lsp",
 	"efm",
+	"terraformls",
 })
