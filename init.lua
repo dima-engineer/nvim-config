@@ -532,6 +532,39 @@ require("mini.git").setup({})
 
 require("mason").setup({})
 
+local ensure_installed_tools = {
+	"lua-language-server",
+	"basedpyright",
+	"bash-language-server",
+	"typescript-language-server",
+	"gopls",
+	"clangd",
+	"fish-lsp",
+	"efm",
+	"terraform-ls",
+	"luacheck",
+	"stylua",
+	"ruff",
+	"prettierd",
+	"eslint_d",
+	"fixjson",
+	"shellcheck",
+	"shfmt",
+	"cpplint",
+	"clang-format",
+	"gofumpt",
+	"revive",
+}
+
+require("mason-registry").refresh(function()
+	for _, tool in ipairs(ensure_installed_tools) do
+		local pkg = require("mason-registry").get_package(tool)
+		if not pkg:is_installed() then
+			pkg:install()
+		end
+	end
+end)
+
 local MiniDiff = require("mini.diff")
 vim.keymap.set("n", "]h", function()
 	MiniDiff.goto_hunk("next")
